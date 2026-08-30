@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill Bill — Spec in, merge-ready PR out</title>
+    <meta
+      name="description"
+      content="Hand Skill Bill a spec and get back a merge-ready PR — planned, implemented, stack-specialist-reviewed, audited against the spec, and quality-gated."
+    />
+    <meta property="og:title" content="Skill Bill" />
+    <meta
+      property="og:description"
+      content="Hand Skill Bill a spec and get back a merge-ready PR. Governed process for AI coding agents that runs the same way every time."
+    />
+    <meta property="og:image" content="assets/skill-bill-readme-hero.svg" />
+    <link rel="icon" href="assets/skill-bill-app-icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand-mark" href="#top" aria-label="Skill Bill home">
+        <img src="assets/skill-bill-app-icon.svg" alt="" width="36" height="36" />
+        <span>Skill Bill</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#intellij">IntelliJ</a>
+        <a href="#install">Install</a>
+        <a
+          class="nav-github"
+          href="https://github.com/oila-gmbh/skill-bill"
+          rel="noopener noreferrer"
+          target="_blank"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-label="Skill Bill">
+        <div class="hero-plane" aria-hidden="true">
+          <div class="hero-grid"></div>
+          <div class="hero-stripe"></div>
+          <div class="hero-stripe hero-stripe--dark"></div>
+          <div class="hero-grain"></div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="hero-brand reveal">Skill Bill</p>
+          <h1 class="hero-headline reveal reveal-delay-1">
+            Spec in.<br />
+            Merge-ready PR out.
+          </h1>
+          <p class="hero-support reveal reveal-delay-2">
+            Planned, implemented, stack-specialist-reviewed, audited against the
+            spec, and quality-gated — the same way, every run.
+          </p>
+          <div class="hero-ctas reveal reveal-delay-3">
+            <a class="btn btn-primary" href="#install">Install in ~60 seconds</a>
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/oila-gmbh/skill-bill"
+              rel="noopener noreferrer"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section problem" aria-labelledby="problem-title">
+        <div class="section-inner">
+          <h2 id="problem-title">Agents are strong. Process is what they lack.</h2>
+          <p>
+            The same prompt yields different work every run. Sometimes it reviews
+            thoroughly, sometimes it skims. Sometimes it follows your conventions,
+            sometimes it invents new ones. Skill Bill gives yours the structure of a
+            real engineering process and holds it to that process across whichever
+            agents you use.
+          </p>
+        </div>
+      </section>
+
+      <section class="section pipeline" id="how" aria-labelledby="pipeline-title">
+        <div class="section-inner">
+          <h2 id="pipeline-title">One governed path from spec to PR</h2>
+          <p class="section-lede">
+            `/bill-feature` carries the work through every phase. If a run is
+            interrupted mid-flight, it resumes from durable workflow state — nothing
+            lost.
+          </p>
+
+          <ol class="phase-rail" aria-label="Feature pipeline phases">
+            <li class="phase">
+              <span class="phase-index">01</span>
+              <span class="phase-name">Plan</span>
+            </li>
+            <li class="phase">
+              <span class="phase-index">02</span>
+              <span class="phase-name">Implement</span>
+            </li>
+            <li class="phase">
+              <span class="phase-index">03</span>
+              <span class="phase-name">Review</span>
+            </li>
+            <li class="phase">
+              <span class="phase-index">04</span>
+              <span class="phase-name">Audit</span>
+            </li>
+            <li class="phase">
+              <span class="phase-index">05</span>
+              <span class="phase-name">Quality gate</span>
+            </li>
+            <li class="phase phase--end">
+              <span class="phase-index">06</span>
+              <span class="phase-name">Merge-ready PR</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section demo" aria-labelledby="demo-title">
+        <div class="section-inner">
+          <h2 id="demo-title">Interrupted mid-flight. Still finishes.</h2>
+          <p class="section-lede">
+            A `/bill-feature` run that hits a usage limit, crash, or lost connection,
+            then resumes from durable state and completes. Generated demo, not a
+            hand recording — so it stays current with the product.
+          </p>
+          <figure class="demo-frame">
+            <img
+              src="assets/skill-bill-demo.gif"
+              width="1200"
+              height="675"
+              alt="Skill Bill demo: a bill-feature run interrupted mid-flight, then resumed from durable workflow state until it finishes"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section get" aria-labelledby="get-title">
+        <div class="section-inner">
+          <h2 id="get-title">What holds it together</h2>
+          <ul class="get-list">
+            <li>
+              <h3>Works with every supported agent</h3>
+              <p>
+                One install detects and wires Claude Code, Codex, Cursor, and
+                Junie. Pick the agents you use; Skill Bill lands in each of them
+                the same way.
+              </p>
+            </li>
+            <li>
+              <h3>CLI and MCP included</h3>
+              <p>
+                The installer places the <code>skill-bill</code> CLI and
+                <code>skill-bill-mcp</code> server, then registers them so your
+                agents can drive the same governed feature runs.
+              </p>
+            </li>
+            <li>
+              <h3>Durable, resumable state</h3>
+              <p>
+                Long multi-phase runs survive crashes and context compaction. Resume
+                is agent-independent: pause under Claude Code, continue under Codex.
+              </p>
+            </li>
+            <li>
+              <h3>Stack-specialist packs</h3>
+              <p>
+                Go, iOS, Kotlin/KMP, PHP, Python, Rust, and TypeScript packs review
+                and check code the way someone who knows that stack would.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section ide" id="intellij" aria-labelledby="ide-title">
+        <div class="section-inner">
+          <h2 id="ide-title">Status in IntelliJ IDEA</h2>
+          <p class="section-lede">
+            An isolated IntelliJ plugin puts the live feature run on the status
+            bar: current step, progress, elapsed clocks, and agent activity.
+            Click for details. Stop the goal or pause after the current subtask
+            without leaving the IDE.
+          </p>
+
+          <figure class="ide-frame">
+            <img
+              src="assets/intellij-plugin-status.png"
+              width="1536"
+              height="1024"
+              alt="IntelliJ IDEA status bar showing Skill Bill active on Implement for SKILL-81, with the details popup open for Stop goal and Pause after current subtask"
+              loading="lazy"
+            />
+            <figcaption>
+              Status bar widget plus details popup. Install from a
+              <code>plugin-v*</code> GitHub Release zip via Settings → Plugins →
+              Install Plugin from Disk. Requires IntelliJ IDEA 2025.2+ and a
+              <code>skill-bill</code> CLI the IDE can resolve.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="section-inner">
+          <h2 id="install-title">Install in about a minute</h2>
+          <p class="section-lede">
+            Downloads and checksum-verifies the prebuilt runtime for your OS. No
+            clone, no JDK, no Gradle. Needs `curl`, `tar`, `unzip`, and
+            `shasum`/`sha256sum` on macos-arm64, macos-x64, windows-x64, or
+            linux-x64.
+          </p>
+
+          <div class="install-panel" role="group" aria-label="Install command">
+            <pre class="install-code"><code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/oila-gmbh/skill-bill/main/install.sh | bash</code></pre>
+            <button type="button" class="btn btn-primary" id="copy-install" data-copy="#install-cmd">
+              Copy command
+            </button>
+          </div>
+
+          <p class="install-note">
+            Prefer to read the script first?
+            <a
+              href="https://raw.githubusercontent.com/oila-gmbh/skill-bill/main/install.sh"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Open install.sh</a
+            >, then run it locally.
+          </p>
+
+          <pre class="follow-up"><code>skill-bill version
+skill-bill doctor
+skill-bill update-check</code></pre>
+        </div>
+      </section>
+
+      <section class="section audience" aria-labelledby="audience-title">
+        <div class="section-inner">
+          <h2 id="audience-title">Who this is for</h2>
+          <p>
+            Developers and teams who want an AI agent to implement whole features
+            with the rigor of a real engineering process — planned, reviewed,
+            audited, and quality-gated — instead of one-off code they have to
+            babysit. You still review the final PR; what reaches you was already
+            checked. Overkill if you only want quick single-file completions.
+            Pre-1.0, built and maintained by a small team. Skill Bill ships its own
+            features through this pipeline.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/skill-bill-app-icon.svg" alt="" width="28" height="28" />
+          <span>Skill Bill</span>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://github.com/oila-gmbh/skill-bill"
+            rel="noopener noreferrer"
+            target="_blank"
+            >GitHub</a
+          >
+          <a
+            href="https://github.com/oila-gmbh/skill-bill/blob/main/docs/getting-started.md"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Getting started</a
+          >
+          <a
+            href="https://github.com/oila-gmbh/skill-bill/tree/main/intellij-plugin"
+            rel="noopener noreferrer"
+            target="_blank"
+            >IntelliJ plugin</a
+          >
+          <a
+            href="https://github.com/oila-gmbh/skill-bill/blob/main/LICENSE"
+            rel="noopener noreferrer"
+            target="_blank"
+            >License</a
+          >
+        </div>
+        <p class="footer-meta">
+          Skill Bill Use License. Commercial use allowed before the stable v1.0.0
+          event; see the repo for terms.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>

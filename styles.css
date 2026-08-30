@@ -517,7 +517,7 @@ a:hover {
 
 .ide-frame img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: right bottom;
   background: #0a0a0d;
@@ -532,10 +532,27 @@ a:hover {
   line-height: 1.5;
 }
 
-.ide-frame figcaption code {
+.ide-frame figcaption strong,
+.ide-vscode strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ide-frame figcaption code,
+.ide-vscode code {
   font-family: var(--font-mono);
   font-size: 0.88em;
   color: var(--yellow-soft);
+}
+
+.ide-vscode {
+  max-width: 62ch;
+  margin: 28px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.5;
 }
 
 .install {

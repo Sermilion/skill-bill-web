@@ -33,7 +33,7 @@
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="#how">How it works</a>
-        <a href="#intellij">IntelliJ</a>
+        <a href="#ide">IDE</a>
         <a href="#install">Install</a>
         <a
           class="nav-github"
@@ -186,14 +186,15 @@
         </div>
       </section>
 
-      <section class="section ide" id="intellij" aria-labelledby="ide-title">
+      <section class="section ide" id="ide" aria-labelledby="ide-title">
         <div class="section-inner">
-          <h2 id="ide-title">Status in IntelliJ IDEA</h2>
+          <h2 id="ide-title">Status in your IDE</h2>
           <p class="section-lede">
-            An isolated IntelliJ plugin puts the live feature run on the status
-            bar: current step, progress, elapsed clocks, and agent activity.
-            Click for details. Stop the goal or pause after the current subtask
-            without leaving the IDE.
+            Isolated IntelliJ and VS Code extensions put the live feature run on
+            the status bar: current step, progress, elapsed clocks, and agent
+            activity. Click for details. Stop the goal or pause after the current
+            subtask without leaving the editor. The VS Code extension also works
+            in Cursor.
           </p>
 
           <figure class="ide-frame">
@@ -205,12 +206,20 @@
               loading="lazy"
             />
             <figcaption>
-              Status bar widget plus details popup. Install from a
+              <strong>IntelliJ IDEA.</strong> Install from a
               <code>plugin-v*</code> GitHub Release zip via Settings → Plugins →
               Install Plugin from Disk. Requires IntelliJ IDEA 2025.2+ and a
               <code>skill-bill</code> CLI the IDE can resolve.
             </figcaption>
           </figure>
+
+          <p class="ide-vscode">
+            <strong>VS Code / Cursor.</strong> Same status bar and goal controls.
+            Install from an <code>extension-v*</code> GitHub Release
+            <code>.vsix</code> via Extensions → Install from VSIX. Needs a
+            <code>skill-bill</code> CLI on <code>PATH</code> or set via
+            <code>skillBill.cliPath</code>.
+          </p>
         </div>
       </section>
 
@@ -287,6 +296,12 @@ skill-bill update-check</code></pre>
             rel="noopener noreferrer"
             target="_blank"
             >IntelliJ plugin</a
+          >
+          <a
+            href="https://github.com/oila-gmbh/skill-bill/tree/main/vscode-extension"
+            rel="noopener noreferrer"
+            target="_blank"
+            >VS Code extension</a
           >
           <a
             href="https://github.com/oila-gmbh/skill-bill/blob/main/LICENSE"

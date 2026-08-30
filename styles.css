@@ -613,6 +613,51 @@ a:hover {
   background: var(--ink);
 }
 
+.projects {
+  background: var(--ink-2);
+}
+
+.project-list {
+  display: grid;
+  gap: 0;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-list li {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-list a {
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.project-list a:hover,
+.project-list a:focus-visible {
+  color: var(--yellow-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.project-list p {
+  max-width: 52ch;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 40px clamp(20px, 5vw, 64px) 56px;

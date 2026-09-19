@@ -19,6 +19,6 @@ Open http://127.0.0.1:8765/
 | `index.html` | Page structure and copy |
 | `styles.css` | Layout and brand styles |
 | `main.js` | Install-command copy button |
-| `assets/` | Icon, demo GIF, IntelliJ screenshot, hero art |
+| `assets/` | Icon, demo GIF, IntelliJ screenshot, hero art, Open Graph image |
 
 Demo GIF and brand assets are sourced from the Skill Bill repo (`docs/assets/`). Regenerate the GIF there with `python3 docs/assets/generate_demo_gif.py`, then copy into `assets/` here.

@@ -501,57 +501,43 @@ a:hover {
   font-size: 1rem;
 }
 
-.ide {
+.desktop {
+  scroll-margin-top: var(--header-h);
   background:
     radial-gradient(ellipse 55% 45% at 12% 20%, rgba(244, 196, 48, 0.08), transparent 55%),
     var(--ink-2);
 }
 
-.ide-frame {
-  margin: 36px 0 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #050506;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
-}
-
-.ide-frame img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: right bottom;
-  background: #0a0a0d;
-}
-
-.ide-frame figcaption {
-  margin: 0;
-  padding: 16px 18px 18px;
-  border-top: 1px solid var(--line);
+.desktop-install {
+  margin: 18px 0 0;
   color: var(--muted);
   font-size: 0.95rem;
-  line-height: 1.5;
 }
 
-.ide-frame figcaption strong,
-.ide-vscode strong {
-  color: var(--text);
-  font-weight: 600;
+.desktop-frame {
+  margin: 40px 0 0;
 }
 
-.ide-frame figcaption code,
-.ide-vscode code {
-  font-family: var(--font-mono);
-  font-size: 0.88em;
-  color: var(--yellow-soft);
+.desktop-screenshot {
+  display: block;
+  border-radius: 14px;
 }
 
-.ide-vscode {
+.desktop-screenshot:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 6px;
+}
+
+.desktop-frame img {
+  width: 100%;
+  filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.35));
+}
+
+.desktop-frame figcaption {
   max-width: 62ch;
-  margin: 28px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: 1.02rem;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 

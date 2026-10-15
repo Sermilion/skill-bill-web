@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -52,7 +52,7 @@
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="#how">How it works</a>
-        <a href="#ide">IDE</a>
+        <a href="#desktop">Desktop app</a>
         <a href="#install">Install</a>
         <a
           class="nav-github"
@@ -205,40 +205,38 @@
         </div>
       </section>
 
-      <section class="section ide" id="ide" aria-labelledby="ide-title">
+      <section class="section desktop" id="desktop" aria-labelledby="desktop-title">
         <div class="section-inner">
-          <h2 id="ide-title">Status in your IDE</h2>
+          <h2 id="desktop-title">Skill Bill on your desktop</h2>
           <p class="section-lede">
-            Isolated IntelliJ and VS Code extensions put the live feature run on
-            the status bar: current step, progress, elapsed clocks, and agent
-            activity. Click for details. Stop the goal or pause after the current
-            subtask without leaving the editor. The VS Code extension also works
-            in Cursor.
+            Follow goal runs and standalone phases across repositories. Check
+            subtask progress, see which runs need your attention, and pause or
+            stop a goal from one window.
           </p>
 
-          <figure class="ide-frame">
-            <img
-              src="assets/intellij-plugin-status.png"
-              width="1536"
-              height="1024"
-              alt="IntelliJ IDEA status bar showing Skill Bill active on Implement for SKILL-81, with the details popup open for Stop goal and Pause after current subtask"
-              loading="lazy"
-            />
+          <p class="desktop-install">Included with the Skill Bill installer.</p>
+
+          <figure class="desktop-frame">
+            <a
+              class="desktop-screenshot"
+              href="assets/skill-bill-desktop.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the full-size Skill Bill desktop app screenshot in a new tab"
+            >
+              <img
+                src="assets/skill-bill-desktop.png"
+                width="1589"
+                height="1047"
+                alt="Skill Bill desktop app showing runs across repositories, a selected goal's subtask progress and execution details, and pause and stop controls"
+                loading="lazy"
+              />
+            </a>
             <figcaption>
-              <strong>IntelliJ IDEA.</strong> Install from a
-              <code>plugin-v*</code> GitHub Release zip via Settings → Plugins →
-              Install Plugin from Disk. Requires IntelliJ IDEA 2025.2+ and a
-              <code>skill-bill</code> CLI the IDE can resolve.
+              Active runs and recent history beside the selected goal's progress
+              and execution details. Select the screenshot to view it full size.
             </figcaption>
           </figure>
-
-          <p class="ide-vscode">
-            <strong>VS Code / Cursor.</strong> Same status bar and goal controls.
-            Install from an <code>extension-v*</code> GitHub Release
-            <code>.vsix</code> via Extensions → Install from VSIX. Needs a
-            <code>skill-bill</code> CLI on <code>PATH</code> or set via
-            <code>skillBill.cliPath</code>.
-          </p>
         </div>
       </section>
 
@@ -246,8 +244,8 @@
         <div class="section-inner">
           <h2 id="install-title">Install in about a minute</h2>
           <p class="section-lede">
-            Downloads and checksum-verifies the prebuilt runtime for your OS. No
-            clone, no JDK, no Gradle. Needs `curl`, `tar`, `unzip`, and
+            Installs the desktop app and checksum-verifies the prebuilt runtime
+            for your OS. No clone, no JDK, no Gradle. Needs `curl`, `tar`, `unzip`, and
             `shasum`/`sha256sum` on macos-arm64, macos-x64, windows-x64, or
             linux-x64.
           </p>
@@ -337,18 +335,7 @@ skill-bill update-check</code></pre>
             target="_blank"
             >Getting started</a
           >
-          <a
-            href="https://github.com/oila-gmbh/skill-bill/tree/main/intellij-plugin"
-            rel="noopener noreferrer"
-            target="_blank"
-            >IntelliJ plugin</a
-          >
-          <a
-            href="https://github.com/oila-gmbh/skill-bill/tree/main/vscode-extension"
-            rel="noopener noreferrer"
-            target="_blank"
-            >VS Code extension</a
-          >
+          <a href="#desktop">Desktop app</a>
           <a
             href="https://github.com/oila-gmbh/skill-bill/blob/main/LICENSE"
             rel="noopener noreferrer"

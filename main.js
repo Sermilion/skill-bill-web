@@ -1,5 +1,6 @@
 (() => {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reduceMotion = motionPreference.matches;
   const canObserve = "IntersectionObserver" in window;
 
   /* ---------- Reveal: only what starts below the fold animates in ---------- */
@@ -13,7 +14,7 @@
           io.unobserve(entry.target);
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0 }
     );
     targets.forEach((el, i) => {
       el.classList.add("reveal");
@@ -129,32 +130,24 @@
 
   const grid = document.getElementById("method-grid");
   if (grid) {
-    const CYCLE = 4200;
     const tabs = Array.from(grid.querySelectorAll(".stage"));
     const nodes = Array.from(grid.querySelectorAll("[data-node]"));
     const panel = document.getElementById("method-panel");
     const title = document.getElementById("panel-title");
     const text = document.getElementById("panel-text");
     const out = document.getElementById("panel-out");
-    let index = 0;
-    let timer = null;
-    let manual = false;
-
-    grid.style.setProperty("--cycle", `${CYCLE}ms`);
+    let selectedStage = 0;
+    let autoTimer = null;
+    let manuallySelected = false;
+    let focusWithin = false;
 
     const select = (i, focus = false) => {
-      index = i;
       const tab = tabs[i];
+      selectedStage = i;
       const uses = (tab.dataset.uses || "").split(/\s+/);
       tabs.forEach((t, j) => {
         t.setAttribute("aria-selected", String(j === i));
         t.tabIndex = j === i ? 0 : -1;
-        const bar = t.querySelector(".stage-bar");
-        bar.classList.remove("is-timing");
-        if (j === i && timer && !manual) {
-          void bar.offsetWidth;
-          bar.classList.add("is-timing");
-        }
       });
       nodes.forEach((n) => n.classList.toggle("is-lit", uses.includes(n.dataset.node)));
       panel.setAttribute("aria-labelledby", tab.id);
@@ -165,17 +158,28 @@
       if (focus) tab.focus();
     };
 
-    const stop = () => {
-      manual = true;
-      window.clearInterval(timer);
-      timer = null;
-      tabs.forEach((t) => t.querySelector(".stage-bar").classList.remove("is-timing"));
+    const stopAutoCycle = () => {
+      if (autoTimer === null) return;
+      window.clearInterval(autoTimer);
+      autoTimer = null;
+    };
+
+    const startAutoCycle = () => {
+      if (autoTimer !== null || manuallySelected || focusWithin || motionPreference.matches) return;
+      autoTimer = window.setInterval(() => {
+        select((selectedStage + 1) % tabs.length);
+      }, 3000);
+    };
+
+    const chooseStage = (i, focus = false) => {
+      manuallySelected = true;
+      stopAutoCycle();
+      select(i, focus);
     };
 
     tabs.forEach((tab, i) => {
       tab.addEventListener("click", () => {
-        stop();
-        select(i);
+        chooseStage(i);
       });
       tab.addEventListener("keydown", (e) => {
         const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
@@ -184,30 +188,26 @@
         if (e.key === "End") next = tabs.length - 1;
         if (next === null) return;
         e.preventDefault();
-        stop();
-        select(next, true);
+        chooseStage(next, true);
       });
     });
 
-    select(0);
+    grid.addEventListener("focusin", () => {
+      focusWithin = true;
+      stopAutoCycle();
+    });
+    grid.addEventListener("focusout", (event) => {
+      if (grid.contains(event.relatedTarget)) return;
+      focusWithin = false;
+      startAutoCycle();
+    });
 
-    if (!reduceMotion && canObserve) {
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (manual) return;
-            if (entry.isIntersecting && !timer) {
-              timer = window.setInterval(() => select((index + 1) % tabs.length), CYCLE);
-              select(index);
-            } else if (!entry.isIntersecting && timer) {
-              window.clearInterval(timer);
-              timer = null;
-            }
-          });
-        },
-        { threshold: 0.4 }
-      ).observe(grid);
-    }
+    select(0);
+    startAutoCycle();
+    motionPreference.addEventListener("change", (event) => {
+      if (event.matches) stopAutoCycle();
+      else startAutoCycle();
+    });
   }
 
   /* ---------- Install copy ---------- */
